@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.3.2'
 gem 'rails', '~> 7.0.8.1'
 gem 'sprockets-rails'
 gem 'pg', '>= 1.5.6'
@@ -9,8 +9,7 @@ gem 'importmap-rails'
 gem 'turbo-rails'
 gem 'stimulus-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'devise', '>= 4.9.3'
-gem 'devise_invitable', '~> 2.0.9'
+gem 'devise'
 
 gem 'puma', '~> 6.4.2'
 gem 'redis', '~> 5.2.0'
