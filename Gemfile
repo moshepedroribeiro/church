@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -14,6 +16,7 @@ gem 'devise'
 gem 'puma', '~> 6.4.2'
 gem 'redis', '~> 5.2.0'
 gem 'rack'
+gem 'simple_form', '~> 5.3.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -25,24 +28,44 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-
+  gem 'rspec', require: false
+  gem 'capybara'
+  gem 'capybara-lockstep'
+  gem 'capybara-screenshot', require: false
+  gem 'debug', platforms: %i[mri windows]
+  gem 'dotenv-rails'
+  gem 'launchy'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'webmock', require: 'webmock/rspec'
+  gem 'parallel_tests'
+  gem 'overcommit'
+  gem 'bundler-audit', require: false
 end
 
 group :development do
   gem 'web-console'
 
-  gem 'rspec', require: false
-  gem 'rspec-rails', require: false
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-capybara', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-rspec_rails', require: false
   gem 'rubocop-performance', require: false
+  gem 'annotate'
+  gem 'brakeman', require: false
+  gem 'erb_lint', require: false
+  gem 'letter_opener'
+  gem 'rubocop-factory_bot', require: false
+  gem 'i18n-debug'
+  gem 'rerun'
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
   gem 'selenium-webdriver'
+
+  gem 'cuprite'
+  gem 'pdf-inspector', require: 'pdf/inspector'
+  gem 'factory_bot_rails'
+  gem 'rspec-retry'
 end

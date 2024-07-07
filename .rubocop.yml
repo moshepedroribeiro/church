@@ -18,7 +18,7 @@ AllCops:
     - .tomo/**/*.rb
     - /**/*.prawn
   Exclude:
-     ignore bin/* except for bin/setup
+    - ignore bin/* except for bin/setup
     - !ruby/regexp /<%= Regexp.quote(File.expand_path("bin", __dir__)) %>\/(?!setup).*/
     - .git/**/*
     - db/*schema.rb
