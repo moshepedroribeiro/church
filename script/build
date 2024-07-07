@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bundle exec rubocop && bundle exec erblint --lint-all && bundle exec brakeman -q -w2 && bundle exec rspec -t js
+#bundle exec parallel_rspec -- -t ~js -t ~ocr -- spec &&

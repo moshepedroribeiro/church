@@ -1,0 +1,17 @@
+<%%= simple_form_for(<%= singular_name %>) do |f| %>
+<%- attributes.each do |attribute| -%>
+  <%- if attribute.password_digest? -%>
+    <%%= f.input :password %>
+    <%%= f.input :password_confirmation %>
+  <%- elsif attribute.attachments? -%>
+    <%%= f.input :<%= attribute.column_name %>, input_html: { multiple: true } %>
+  <%- else -%>
+    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+  <%- end -%>
+<%- end -%>
+
+<div class="d-flex">
+  <%%= f.submit class: 'btn btn-primary' %>
+  <%%= link_to t(:cancel, scope: %i[helpers links]), :back, class: 'btn btn-default' %>
+</div>
+<%% end %>
