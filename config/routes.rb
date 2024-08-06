@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, class_name: 'User', controllers: { sessions: 'login' }
   root to: 'home#index'
-  get :sign_in, to: 'sessions#new', as: :new_session
 
+  resources :login, only: %i[new]
   resources :registrations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
